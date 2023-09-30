@@ -1,0 +1,328 @@
+/*@media (max-width: 512px)  and (-webkit-min-device-pixel-ratio: 1.5),
+       (max-width: 512px)  and (min-resolution: 1.5dppx),
+       (max-width: 1024px) and (-webkit-max-device-pixel-ratio: 1.5),
+       (max-width: 1024px) and (max-resolution: 1.5dppx) {
+  body::before {
+    background-image: url('../img/bg_1024.jpg');
+  }
+}
+@media (min-width: 513px)  and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5),
+       (min-width: 513px)  and (max-width: 1024px) and (min-resolution: 1.5dppx),
+       (min-width: 1025px) and (max-width: 2048px) and (-webkit-max-device-pixel-ratio: 1.5),
+       (min-width: 1025px) and (max-width: 2048px) and (max-resolution: 1.5dppx)  {
+  body::before {
+    background-image: url('../img/bg_2048.jpg');
+  }
+}
+@media (min-width: 1025px) and (-webkit-min-device-pixel-ratio: 1.5),
+       (min-width: 1025px) and (min-resolution: 1.5dppx),
+       (min-width: 2049px) and (-webkit-max-device-pixel-ratio: 1.5),
+       (min-width: 2049px) and (max-resolution: 1.5dppx) {
+  body::before {
+    background-image: url('../img/bg_2880.jpg');
+  }
+}
+body {
+   background-image: url('../img/bg_2880.jpg');
+} */
+.mdl-card-square.mdl-card {
+  width: 320px;
+  height: 320px;
+}
+.mdl-card-square > .mdl-card__title {
+  color: #fff;
+  background:
+    url('https://getmdl.io/assets/demos/dog.png') bottom right 15% no-repeat #46B6AC;
+}
+@media (max-width: 479px) {
+   .mdl-grid {
+      padding: 11%;
+   } 
+}
+.mdl-card-square.mdl-card {
+   /*margin: 1%; */
+   margin: 6px;
+}
+@media (max-width: 839px) and (min-width: 480px) {
+.mdl-grid { 
+   padding: 0;
+   }
+}
+.mdl-layout__header {
+   background-color: #6A7C95;
+   box-shadow: 0 2px 5px rgba(0,0,0,.26);
+   /*border-bottom: 5px solid #00A18B;*/
+}
+/* ZOOM OUT INTO EFFECT */
+.mdl-container {
+  /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
+  width: 90%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.mdl-container::after {
+  /* clearfix */
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* -------------------------------- 
+
+Main components 
+
+-------------------------------- */
+#mdl-intro {
+  position: relative;
+  height: 300px;
+  /*margin-top: 50px; */
+  z-index: 1;
+}
+#mdl-intro #mdl-intro-background {
+  height: 102%;
+  width: 100%;
+  background: url("../img/cd-intro-background.jpg") no-repeat center center;
+  background-size: cover;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+   margin-top: -6px;
+}
+#mdl-intro #mdl-intro-tagline {
+  position: absolute;
+  width: 90%;
+  max-width: 1170px;
+  left: 50%;
+  top: 50%;
+  bottom: auto;
+  right: auto;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -o-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+#mdl-intro h1 {
+  text-transform: uppercase;
+  font-size: 24px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #FFF;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (min-width: 768px) {
+  #mdl-intro {
+    height: 400px;
+    margin-top: 70px;
+  }
+  #mdl-intro h1 {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  #mdl-intro {
+    position: fixed;
+    /* do not overlap the header */
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    margin-top: 0;
+  }
+  #mdl-intro h1 {
+    font-size: 32px;
+    font-size: 2rem;
+  }
+}
+.mdl-content {
+  position: relative;
+  padding: 2em 0;
+  line-height: 1.6;
+  color: #65676f;
+  background-color: #f0f1e7;
+  z-index: 2;
+}
+.mdl-content::before {
+  /* subtle gradient right above the main content */
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: -webkit-linear-gradient( bottom , rgba(46, 49, 61, 0.5), rgba(46, 49, 61, 0));
+  background: linear-gradient(to top, rgba(46, 49, 61, 0.5), rgba(46, 49, 61, 0));
+}
+.no-cssgradients .mdl-content::before {
+  /* use Modernizr to detect whether the browser supports or not css gradients */
+  display: none;
+}
+.mdl-content h2 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+.mdl-content p {
+  margin: 1em 0;
+}
+@media only screen and (min-width: 768px) {
+  .mdl-content {
+    line-height: 1.8;
+  }
+  .mdl-content h2 {
+    font-size: 30px;
+    font-size: 1.875rem;
+  }
+}
+@media only screen and (min-width: 1170px) {
+  .mdl-content {
+    padding: 4em 0;
+    margin-top: 570px;
+  }
+  .mdl-content p {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+.mdl-layout__container {
+   /*margin-top: -570px;*/
+   position: inherit;
+   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+@media only screen and (min-width: 1170px) {
+   .mdl-content {
+      padding: 4em 0;
+      margin-top: 511px;
+   }
+}
+.mdl-layout {
+   position: inherit;
+}
+@media screen and (max-width: 1024px) {
+   .mdl-layout__drawer-button {
+      margin: 4px;
+      color: rgba(0, 0, 0, 0.5);
+      background-color: rgba(255, 255, 255, 0.87);
+      border-radius: 2px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+   }
+}
+.mdl-layout__drawer-button {
+   outline: none;
+}
+.mdl-layout__drawer-button:hover {
+   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.12);
+}
+.mdl-mini-footer--social-btn, .mdl-mini-footer__social-btn {
+   background-color: #fff;
+   border-radius: 2px;
+}
+#fa-facebook {
+   /*font-size: 29px;
+   margin-top: 9px;*/
+   color: #3b5998;
+   outline: none;
+}
+#fa-twitter {
+   /*font-size: 29px;*/
+   color: #4099ff;
+   outline: none;
+}
+#fa-gplus {
+   color: #db5a3c;
+   font-size: 24px;
+   outline: none;
+}
+
+/* -------------------------------- 
+
+Theme Changer Toggle Switch 
+
+-------------------------------- */
+.mdl-switch {
+   margin: -5px;
+}
+
+/*.mdl-switch.is-checked + .mdl-layout--fixed-header > .mdl-layout__header {
+   background-color: #1976D2;
+}*/
+
+/*.mdl-switch.is-checked, .mdl-layout__drawer.is-visible.is-checked {
+   background-color: #1976D2;
+}
+*/
+.mdl-switch.is-checked + .mdl-layout__header-row .mdl-navigation__link {
+   background-color: #1976D2;
+}
+
+/*----------------------------*/
+.switch {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    box-sizing: content-box;
+    outline: none
+}
+
+.switch,
+.switch small {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent
+}
+
+.switch small {
+    font-size: 12px;
+    top: 0;
+    border-radius: 100%;
+    text-align: center;
+    display: block;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+    -webkit-transition: all .2s;
+    transition: all .2s;
+    overflow: hidden;
+    color: #000
+}
+
+.switch-default {
+    width: 50px;
+    height: 30px;
+    border-radius: 20px;
+    line-height: 30px
+}
+
+.switch-default small {
+    width: 30px;
+    height: 30px
+}
+
+.switch-small {
+    border-radius: 20px;
+    height: 20px;
+    width: 33px;
+    line-height: 20px
+}
+
+.switch-small small {
+    height: 20px;
+    width: 20px
+}
+
+.switch-large {
+    border-radius: 40px;
+    height: 40px;
+    width: 66px;
+    line-height: 40px
+}
+
+.switch-large small {
+    height: 40px;
+    width: 40px
+}
+
+.switch-disabled {
+    opacity: .5
+}
